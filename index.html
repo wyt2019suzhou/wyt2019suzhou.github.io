@@ -126,7 +126,7 @@
       <div class="paper" id="scrimp">
       <a href="javascript:toggleblock('scrimp_abs')">abstract</a> |
       <a href="https://arxiv.org/pdf/2303.00605.pdf">pdf</a> |
-      <a href="https://github.com/marmotlab/SCRIMP">code</a>
+      <a href="https://github.com/marmotlab/SCRIMP">code</a> |
         
       <p align="justify"> <i id="scrimp_abs">Trading off performance guarantees in favor of scalability, the Multi-Agent Path Finding (MAPF) community has recently started to embrace Multi-Agent Reinforcement Learning (MARL), where agents learn to collaboratively generate individual, collision-free (but often suboptimal) paths. Scalability is usually achieved by assuming a local field of view (FOV) around the agents, helping scale to arbitrary world sizes. However, this assumption significantly limits the amount of information available to the agents, making it difficult for them to enact the type of joint maneuvers needed in denser MAPF tasks. In this paper, we propose SCRIMP, where agents learn individual policies from even very small (down to 3x3) FOVs, by relying on a highly-scalable global/local communication mechanism based on a modified transformer. We further equip agents with a state-value-based tie-breaking strategy to further improve performance in symmetric situations, and introduce intrinsic rewards to encourage exploration while mitigating the long-term credit assignment problem. Empirical evaluations on a set of experiments indicate that SCRIMP can achieve higher performance with improved scalability compared to other state-of-the-art learning-based MAPF planners with larger FOVs, and even yields similar performance as a classical centralized planner in many cases. Ablation studies further validate the effectiveness of our proposed techniques. Finally, we show that our trained model can be directly implemented on real robots for online MAPF through high-fidelity simulations in gazebo.</i></p>
 
@@ -135,46 +135,23 @@
   </tr>
   
   <tr>
-    <td width="40%" valign="top" align="center"><a href="https://ieeexplore.ieee.org/abstract/document/10138598">
-    <video playsinline autoplay loop muted src="videos/mui-tare-demo.mp4" poster="images/mui-tare_cover.png" alt="sym" width="90%" style="padding-top:0px;padding-bottom:0px;border-radius:15px;"></video>
+    <td width="40%" valign="top" align="center"><a href="https://arxiv.org/abs/2201.11994">
+    <video playsinline autoplay loop muted src="videos/sac.mp4" poster="./images/loading-icon.gif" alt="sym" width="90%" style="padding-top:0px;padding-bottom:0px;border-radius:15px;"></video>
     </a></td>
     <td width="60%" valign="top">
-      <p><a href="https://ieeexplore.ieee.org/abstract/document/10138598" id="MUITARE">
-      <heading>MUI-TARE: Cooperative Multi-Agent Exploration With Unknown Initial Position</heading></a><br>
-      <b>Jingtian Yan</b>, Xingqiao Lin, Zhongqiang Ren, Shiqi Zhao, Jieqiong Yu, Chao Cao, Peng Yin, Ji Zhang, and Sebastian Scherer<br>
-      IEEE Robotics and Automation Letters (RA-L), 2023.<br>
+      <p><a href="https://arxiv.org/abs/2201.11994" id="FCMNET">
+      <heading>FCMNet: Full Communication Memory Net for Team-Level Cooperation in Multi-Agent Systems</heading></a><br>
+      <b>Yutong Wang</b>, Guillaume Sartoretti<br>
+      International Conference on Autonomous Agents and Multiagent Systems 2022 (AAMAS 2022), Accepted.<br>
       </p>
 
-      <div class="paper" id="muitare">
-      <a href="https://arxiv.org/pdf/2209.10775.pdf">pdf</a> |
-      <a href="javascript:toggleblock('muitare_abs')">abstract</a> |
-      <!-- <a href="javascript:toggleblock('material_review_abs')">bibtex</a> | -->
-      <a shape="rect" href="javascript:togglebib('muitare')" class="togglebib">bibtex</a> |
-      <a href="https://arxiv.org/abs/2209.10775">arXiv</a> |
-      <a href="https://www.youtube.com/watch?v=imSKHg3T1Wo">video</a>
+      <div class="paper" id="fcmnet">
+      <a href="javascript:toggleblock('fcmnet_abs')">abstract</a> |
+      <a href="https://arxiv.org/pdf/2201.11994.pdf">pdf</a> |
+      <a href="https://github.com/marmotlab/FCMNet">code</a> |
 
-      <p align="justify"> <i id="muitare_abs">Multi-agent exploration of a bounded 3D environment with the unknown initial poses of agents is a challenging problem. It requires both quickly exploring the environments and robustly merging the sub-maps built by the agents. Most existing exploration strategies directly merge two sub-maps built by different agents when a single frame observation is matched, which can lead to incorrect merging due to the false-positive detection of the overlap and is thus not robust. In the meanwhile, some recent place recognition methods use sequence matching for robust data association. However, naively applying these sequence matching methods to multi-agent exploration may require one agent to repeat a large amount of another agent's history trajectory so that a sequence of matched observation can be established, which reduces the overall exploration time efficiency. To intelligently balance the robustness of sub-map merging and exploration efficiency, we develop a new approach for lidar-based multi-agent exploration, which can direct one agent to repeat another agent's trajectory in an adaptive manner based on the quality indicator of the sub-map merging process. Additionally, our approach extends the recent single-agent hierarchical exploration strategy to multiple agents in a cooperative manner for agents whose sub-maps are merged, to improve exploration efficiency. Our experiments show that our approach is up to 50% more efficient than the baselines while merging sub-maps robustly.</i></p>
-      <p align="justify"> <i id="material_review_abs">@ARTICLE{yan2023mui-tare,<br>
-        author={Yan, Jingtian and Lin, Xingqiao and Ren, Zhongqiang and Zhao, Shiqi and Yu, Jieqiong and Cao, Chao and Yin, Peng and Zhang, Ji and Scherer, Sebastian},\n
-        journal={IEEE Robotics and Automation Letters}, 
-        title={MUI-TARE: Cooperative Multi-Agent Exploration With Unknown Initial Position}, 
-        year={2023},
-        volume={8},
-        number={7},
-        pages={4299-4306},
-        doi={10.1109/LRA.2023.3281262}}</i></p>
+      <p align="justify"> <i id="fcmnet_abs">Decentralized cooperation in partially-observable multi-agent systems requires effective communications among agents. To support this effort, this work focuses on the class of problems where global communications are available but may be unreliable, thus precluding differentiable communication learning methods. We introduce FCMNet, a reinforcement learning based approach that allows agents to simultaneously learn a) an effective multi-hop communications protocol and b) a common, decentralized policy that enables team-level decision-making. Specifically, our proposed method utilizes the hidden states of multiple directional recurrent neural networks as communication messages among agents. Using a simple multi-hop topology, we endow each agent with the ability to receive information sequentially encoded by every other agent at each time step, leading to improved global cooperation. We demonstrate FCMNet on a challenging set of StarCraft II micromanagement tasks with shared rewards, as well as a collaborative multi-agent pathfinding task with individual rewards. There, our comparison results show that FCMNet outperforms state-of-the-art communication-based reinforcement learning methods in all StarCraft II micromanagement tasks, and value decomposition methods in certain tasks. We further investigate the robustness of FCMNet under realistic communication disturbances, such as random message loss or binarized messages (i.e., non-differentiable communication channels), to showcase FMCNet's potential applicability to robotic tasks under a variety of real-world conditions.</i></p>
 
-<pre xml:space="preserve">
-    @ARTICLE{yan2023mui-tare,<br>
-        author={Yan, Jingtian and Lin, Xingqiao and Ren, Zhongqiang and Zhao, Shiqi and Yu, Jieqiong and Cao, Chao and Yin, Peng and Zhang, Ji and Scherer, Sebastian},\n
-        journal={IEEE Robotics and Automation Letters}, 
-        title={MUI-TARE: Cooperative Multi-Agent Exploration With Unknown Initial Position}, 
-        year={2023},
-        volume={8},
-        number={7},
-        pages={4299-4306},
-        doi={10.1109/LRA.2023.3281262}}
-</pre>
       </div>
     </td>
   </tr>
@@ -252,10 +229,10 @@ hideallbibs();
   hideblock('material_review_abs');
 </script>
 <script xml:space="preserve" language="JavaScript">
-    hideblock('psb_abs');
+    hideblock('scrimp_abs');
   </script>
 <script xml:space="preserve" language="JavaScript">
-    hideblock('muitare_abs');
+    hideblock('fcmnet_abs');
   </script>
 <script xml:space="preserve" language="JavaScript">
     hideblock('exploration_isaac_sim_abs');
